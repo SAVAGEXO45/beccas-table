@@ -1,0 +1,11 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Testimonial extends Model
+{
+    protected $fillable = ['name', 'quote', 'published'];
+    protected $casts = ['published' => 'boolean'];
+}

@@ -1,0 +1,56 @@
+.catalog-filters { margin-top: 1.25rem; }
+.catalog-filters .text-link { align-self: center; }
+.catalog-groups { display: grid; gap: .65rem; }
+.catalog-group { border: 1px solid var(--line); background: var(--paper); }
+.catalog-group summary {
+    display: flex;
+    align-items: center;
+    gap: .65rem;
+    padding: .9rem 1rem;
+    cursor: pointer;
+    font-weight: 650;
+}
+.catalog-group summary::-webkit-details-marker { display: none; }
+.catalog-group summary:hover { background: var(--ivory); }
+.catalog-group summary::before {
+    content: '';
+    width: .45rem;
+    height: .45rem;
+    flex: 0 0 auto;
+    border: solid currentColor;
+    border-width: 0 1.5px 1.5px 0;
+    transform: rotate(-45deg);
+}
+.catalog-group[open] summary::before { transform: rotate(45deg); }
+.catalog-group summary .catalog-count { margin-left: auto; text-align: right; }
+.catalog-count, .catalog-price small { color: var(--ink-soft); font-size: .875rem; font-weight: 400; }
+.catalog-group-content { padding: .8rem 1rem; margin: 0; }
+.catalog-group-content:has(.catalog-rows) { padding: 0; }
+.catalog-row {
+    display: grid;
+    grid-template-columns: minmax(10rem, 1fr) minmax(6rem, auto) auto auto;
+    align-items: center;
+    gap: .55rem 1rem;
+    padding: .7rem 1rem;
+    border-top: 1px solid var(--line);
+}
+.catalog-meal, .catalog-actions { display: flex; align-items: center; gap: .65rem; }
+.catalog-actions { flex-wrap: wrap; }
+.catalog-meal h2 { font-family: var(--font-sans); font-size: 1rem; font-weight: 650; margin: 0; overflow-wrap: anywhere; }
+.catalog-thumbnail { flex: 0 0 56px; width: 56px; height: 56px; object-fit: cover; border: 1px solid var(--line); }
+.catalog-no-photo { display: grid; place-items: center; text-align: center; font-size: .7rem; color: var(--ink-soft); }
+.catalog-price small { display: block; }
+.catalog-availability { color: #264f38; background: #e5eee5; font-size: .8rem; padding: .2rem .55rem; justify-self: start; white-space: nowrap; }
+.catalog-sold-out { color: #743d2b; background: #f5e9df; }
+.catalog-actions .catalog-delete { border-color: #804435; color: #804435; }
+.catalog-actions .catalog-delete:hover { background: #804435; color: #fff; }
+
+@media (max-width: 1120px) {
+    .catalog-row { grid-template-columns: minmax(8rem, 1fr) auto auto; }
+    .catalog-row .catalog-actions { grid-column: 1 / -1; }
+}
+@media (max-width: 480px) {
+    .catalog-row { grid-template-columns: minmax(0, 1fr) auto; }
+    .catalog-meal { grid-column: 1 / -1; }
+    .catalog-group summary { padding-inline: .75rem; }
+}

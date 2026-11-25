@@ -1,0 +1,17 @@
+.payment-options { display: grid; gap: .55rem; }
+.payment-choice, .transfer-copy, .checkout-item, .checkout-item-controls { display: flex; align-items: center; gap: .65rem; }
+.payment-choice { border: 1px solid var(--line); padding: .65rem .75rem; cursor: pointer; }
+.payment-choice:has(:checked) { border-color: var(--gold); background: var(--ivory); }
+.payment-choice:has(:disabled) { color: var(--ink-soft); cursor: default; }
+.payment-choice input { width: auto; min-height: auto; accent-color: var(--charcoal); }
+.payment-choice small, .checkout-item small { display: block; color: var(--ink-soft); }
+.bank-instructions { border-left: 3px solid var(--gold); padding: .75rem; background: var(--ivory); }
+.bank-instructions .hours dd { overflow-wrap: anywhere; }
+.transfer-copy, .checkout-item-controls { flex-wrap: wrap; }
+.checkout-items li { padding-block: .65rem; border-bottom: 1px solid var(--line); }
+.checkout-item { align-items: start; }
+.checkout-item img { width: 56px; height: 56px; flex: none; object-fit: cover; }
+.checkout-item > strong { margin-left: auto; white-space: nowrap; }
+.checkout-item-controls { align-items: end; margin-top: .5rem; }
+.checkout-item-controls > form:last-child { margin-bottom: .45rem; }
+[data-place-order]:disabled { cursor: wait; opacity: .67; }
